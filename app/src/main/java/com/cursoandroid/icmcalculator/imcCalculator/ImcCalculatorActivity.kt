@@ -1,16 +1,18 @@
 package com.cursoandroid.androidmaster.imcCalculator
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import com.cursoandroid.icmcalculator.R
+import com.cursoandroid.icmcalculator.imcCalculator.ResultIMCActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 class ImcCalculatorActivity : AppCompatActivity() {
     //Variables Globales
@@ -96,7 +98,10 @@ class ImcCalculatorActivity : AppCompatActivity() {
         }
 
         btnCalculate.setOnClickListener {
-            Toast.makeText(this, calculateIMC().toString(), Toast.LENGTH_LONG).show()
+            var resultIMC = calculateIMC()
+            val intent = Intent(this, ResultIMCActivity::class.java)
+            intent.putExtra("resultIMC", resultIMC)
+            startActivity(intent)
         }
     }
 
@@ -129,9 +134,14 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
     private fun calculateIMC(): Double {
         var weight = tvWeight.text.toString().toInt()
-        var height = (((tvHeight.text.split(" ")[0].toInt()) * 2) / 100).toDouble()
+        var heightNumber = ((tvHeight.text.split(" ")[0].toDouble()))/100
+        var height = (heightNumber * heightNumber)
         var resultIMC = weight / height
-        return resultIMC
+
+        val df = DecimalFormat("#.#")
+        df.roundingMode = RoundingMode.DOWN
+        var resultFormat = df.format(resultIMC).replace(",", ".").toDouble()
+        return resultFormat
     }
 
     //Ejecuta los Métodos por Primera Vez

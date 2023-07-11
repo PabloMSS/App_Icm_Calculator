@@ -6,4 +6,16 @@
     <string name="weight">Peso</string>
     <string name="age">Edad</string>
     <string name="calculate">Calcular IMC</string>
+    <string name="result">Tu Resultado</string>
+    <string name="recalculate">Volver a Calcular</string>
+
+    <string name="error">Error</string>
+    <string name="title_peso_bajo">Peso Bajo</string>
+    <string name="descripcion_peso_bajo">Estás por debajo de tu estado óptimo para tu peso y altura.</string>
+    <string name="title_peso_normal">Peso Normal</string>
+    <string name="descripcion_peso_normal">Estás en un estado óptimo para tu peso y altura.</string>
+    <string name="title_sobrepeso">Sobrepeso</string>
+    <string name="descripcion_sobrepeso">Estás por encima de tu peso óptimo acorde a tu peso y altura.</string>
+    <string name="title_obesidad">Obesidad</string>
+    <string name="descripcion_obesidad">Estás muy por encima de tu peso óptimo acorde a tu peso y altura.</string>
 </resources>

@@ -10,4 +10,5 @@
     <color name="background_button">#EB1555</color>
     <color name="title_text">#FF8D8E98</color>
     <color name="background_fab">#FF6200EE</color>
+    <color name="text_final">#88E819</color>
 </resources>
