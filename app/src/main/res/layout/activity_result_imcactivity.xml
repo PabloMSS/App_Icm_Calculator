@@ -46,8 +46,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvResult"
             tools:text="Normal"
-            android:textSize="30dp"
-            android:textColor="@color/text_final"/>
+            android:textSize="30dp"/>
 
         <TextView
             android:layout_width="wrap_content"
